@@ -7,5 +7,5 @@ const logInPage = function (req, res, next) {
 };
 
 const SignUpPage = function (req, res, next) {
-  res.sent("NOT IMPLEMENTED: SIGN UP PAGE");
+  res.send("NOT IMPLEMENTED: SIGN UP PAGE");
 };
