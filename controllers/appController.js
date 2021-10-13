@@ -1,11 +1,11 @@
-const homepage = function (req, res, next) {
-  res.send("NOT IMPLEMENTED: HOMEPAGE");
+exports.homepage = function (req, res, next) {
+  res.json("NOT IMPLEMENTED: HOMEPAGE");
 };
 
-const logInPage = function (req, res, next) {
-  res.send("NOT IMPLEMENTED: LOG IN PAGE");
+exports.logInPage = function (req, res, next) {
+  res.json("NOT IMPLEMENTED: LOG IN PAGE");
 };
 
-const SignUpPage = function (req, res, next) {
-  res.send("NOT IMPLEMENTED: SIGN UP PAGE");
+exports.SignUpPage = function (req, res, next) {
+  res.json("NOT IMPLEMENTED: SIGN UP PAGE");
 };
