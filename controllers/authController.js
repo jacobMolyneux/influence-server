@@ -10,7 +10,6 @@ exports.SignUp = function (req, res, next) {
     if (err) {
       return next(err);
     }
-    res.json("Success!");
     res.redirect("/");
   });
 };

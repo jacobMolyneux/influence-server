@@ -2,7 +2,6 @@ var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
 const cors = require("cors");
-
 const session = require("express-session");
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
@@ -34,10 +33,14 @@ app.use(session({ secret: "cats", resave: false, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.urlencoded({ extended: false }));
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+  })
+);
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
-app.use(cors());
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

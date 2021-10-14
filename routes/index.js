@@ -16,7 +16,7 @@ router.get("/LogIn", appController.get_logIn_Page);
 router.post("/LogIn", authController.SignIn);
 
 // get sign in page
-router.get("/SignUp", appController.get_sign_up_page);
+router.get("/SignUp", cors(), appController.get_sign_up_page);
 
 // create user
 router.post("/SignUp", cors(), authController.SignUp);
