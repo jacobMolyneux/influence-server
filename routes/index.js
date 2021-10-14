@@ -8,6 +8,15 @@ var router = express.Router();
 //get homepage
 router.get("/", appController.homepage);
 
+// get log in page
+router.get("/LogIn", appController.get_logIn_Page);
+
+// log in to app
+router.post("/LogIn", authController.SignIn);
+
+// get sign in page
+router.get("/SignUp", appController.get_sign_up_page);
+
 // create user
 router.post("/SignUp", authController.SignUp);
 

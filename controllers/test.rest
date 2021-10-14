@@ -2,9 +2,21 @@
 ##get homepage
 GET http://localhost:8000/
 
-### get Sign Up page
-GET http://localhost:3000/SignUp
 
 ### get Log In Page
-GET http://localhost:3000/LogIn
+GET http://localhost:8000/LogIn
 
+### post request to sign in to the page
+GET http://localhost:8000/LogIn
+
+### get Sign Up page
+GET http://localhost:8000/SignUp
+
+### post request to create a user
+POST http://localhost:8000/SignUp HTTP/1.1
+content-type: application/json
+
+{
+    "username": "Darth Vader",
+    "password": "Password123"
+}

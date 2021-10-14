@@ -12,3 +12,7 @@ exports.SignUp = function (req, res, next) {
     res.redirect("/");
   });
 };
+
+exports.SignIn = function (req, res) {
+  res.json("NOT IMPLEMENTED: SIGN IN FUNCTION");
+};
