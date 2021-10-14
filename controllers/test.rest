@@ -17,6 +17,6 @@ POST http://localhost:8000/SignUp HTTP/1.1
 content-type: application/json
 
 {
-    "username": "Darth Vader",
-    "password": "Password123"
+    "username": "Thor",
+    "password": "Asgard"
 }

@@ -1,4 +1,6 @@
 const { concatSeries } = require("async");
+const passport = require("passport");
+const LocalStrategy = require("passport-local").Strategy;
 const User = require("../models/influencerModel");
 exports.SignUp = function (req, res, next) {
   const user = new User({
@@ -8,11 +10,36 @@ exports.SignUp = function (req, res, next) {
     if (err) {
       return next(err);
     }
-    res.json("New User Created!");
+    res.json("Success!");
     res.redirect("/");
   });
 };
 
 exports.SignIn = function (req, res) {
-  res.json("NOT IMPLEMENTED: SIGN IN FUNCTION");
+  passport.use(
+    new LocalStrategy((username, password, done) => {
+      User.findOne({ username: username }, (err, user) => {
+        if (err) {
+          return done(err);
+        }
+        if (!user) {
+          return done(null, false, { message: "Incorrect username" });
+        }
+        if (user.password !== password) {
+          return done(null, false, { message: "Incorrect password" });
+        }
+        json.send("Sign In Complete!");
+        return done(null, user);
+      });
+    })
+  );
+  passport.serializeUser(function (user, done) {
+    done(null, user.id);
+  });
+
+  passport.deserializeUser(function (id, done) {
+    User.findById(id, function (err, user) {
+      done(err, user);
+    });
+  });
 };

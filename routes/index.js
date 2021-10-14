@@ -1,6 +1,7 @@
 var express = require("express");
 const appController = require("../controllers/appController");
 const authController = require("../controllers/authController");
+const cors = require("cors");
 var router = express.Router();
 
 /* GET home page. */
@@ -18,6 +19,6 @@ router.post("/LogIn", authController.SignIn);
 router.get("/SignUp", appController.get_sign_up_page);
 
 // create user
-router.post("/SignUp", authController.SignUp);
+router.post("/SignUp", cors(), authController.SignUp);
 
 module.exports = router;

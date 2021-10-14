@@ -1,6 +1,7 @@
 var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
+const cors = require("cors");
 
 const session = require("express-session");
 const passport = require("passport");
@@ -36,6 +37,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
+app.use(cors());
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
