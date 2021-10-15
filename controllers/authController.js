@@ -2,7 +2,7 @@ const { concatSeries } = require("async");
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const User = require("../models/influencerModel");
-exports.SignUp = function (req, res, next) {
+exports.SignUpInfluencer = function (req, res, next) {
   const user = new User({
     username: req.body.username,
     password: req.body.password,

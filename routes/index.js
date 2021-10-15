@@ -19,6 +19,6 @@ router.post("/LogIn", authController.SignIn);
 router.get("/SignUp", cors(), appController.get_sign_up_page);
 
 // create user
-router.post("/SignUp", cors(), authController.SignUp);
+router.post("/SignUp", cors(), authController.SignUpInfluencer);
 
 module.exports = router;
